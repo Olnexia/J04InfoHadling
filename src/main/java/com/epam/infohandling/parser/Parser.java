@@ -1,9 +1,9 @@
 package com.epam.infohandling.parser;
 
-import com.epam.infohandling.Composite;
+import com.epam.infohandling.entity.Composite;
 
-abstract class Parser {
-    Parser successor;
+public abstract class Parser {
+    private Parser successor;
 
     public Parser(){
     }
@@ -17,5 +17,4 @@ abstract class Parser {
     }
 
     public abstract Composite parse(String input);
-
 }

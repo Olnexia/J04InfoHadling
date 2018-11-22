@@ -1,12 +1,12 @@
-package com.epam.infohandling;
+package com.epam.infohandling.entity;
 
-import com.sun.tools.javac.util.List;
+import java.util.List;
 
-public class Lexeme implements Component,Value {
+public class Lexeme implements Component, Value {
     private String value;
     private boolean expression;
 
-    public Lexeme(String value,boolean expression){
+    private Lexeme(String value,boolean expression){
         this.value = value;
         this.expression = expression;
     }
@@ -29,5 +29,9 @@ public class Lexeme implements Component,Value {
 
     public String getValue(){
         return value;
+    }
+
+    public boolean isExpression() {
+        return expression;
     }
 }

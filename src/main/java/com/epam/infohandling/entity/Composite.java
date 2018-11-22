@@ -1,11 +1,10 @@
-package com.epam.infohandling;
-
+package com.epam.infohandling.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Composite implements Component {
-    private List<Component> components = new ArrayList<Component>();
+    private List<Component> components = new ArrayList<>();
 
     public void addComponent(Component component) {
         components.add(component);
