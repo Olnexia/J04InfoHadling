@@ -1,6 +1,7 @@
 package com.epam.infohandling.parser;
 
 import com.epam.infohandling.entity.Composite;
+import java.util.Arrays;
 
 public class TextParser extends Parser {
     private static final String PARAGRAPH_SEPARATOR = "(?<!^)\\t";
@@ -13,10 +14,7 @@ public class TextParser extends Parser {
     public Composite parse(String text) {
         String[] content = text.trim().split(PARAGRAPH_SEPARATOR);
         Composite textComposite = new Composite();
-        for(String textComponent : content){
-            Composite paragraph = getSuccessor().parse(textComponent);
-            textComposite.addComponent(paragraph);
-        }
+        Arrays.stream(content).forEach(p->textComposite.addComponent(getSuccessor().parse(p)));
         return textComposite;
     }
 }
