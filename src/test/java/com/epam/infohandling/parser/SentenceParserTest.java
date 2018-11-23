@@ -2,8 +2,6 @@ package com.epam.infohandling.parser;
 
 import com.epam.infohandling.entity.Component;
 import com.epam.infohandling.entity.Lexeme;
-import com.epam.infohandling.parser.Parser;
-import com.epam.infohandling.parser.SentenceParser;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;

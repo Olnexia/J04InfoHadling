@@ -14,7 +14,7 @@ public class TextParser extends Parser {
     public Composite parse(String text) {
         String[] content = text.trim().split(PARAGRAPH_SEPARATOR);
         Composite textComposite = new Composite();
-        Arrays.stream(content).forEach(p->textComposite.addComponent(getSuccessor().parse(p)));
+        Arrays.stream(content).forEach(p->textComposite.addComponent(getSuccessor().parse("\t"+p)));
         return textComposite;
     }
 }
