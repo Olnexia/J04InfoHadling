@@ -3,8 +3,8 @@ package com.epam.infohandling.entity;
 import java.util.List;
 
 public class Lexeme implements Component, Value {
-    private String value;
-    private boolean expression;
+    private final String value;
+    private final boolean expression;
 
     private Lexeme(String value,boolean expression){
         this.value = value;
@@ -29,10 +29,6 @@ public class Lexeme implements Component, Value {
 
     public String getValue(){
         return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 
     public boolean isExpression() {

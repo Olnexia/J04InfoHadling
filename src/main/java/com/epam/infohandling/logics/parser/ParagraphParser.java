@@ -2,7 +2,7 @@ package com.epam.infohandling.logics.parser;
 
 import com.epam.infohandling.entity.Component;
 import com.epam.infohandling.entity.Composite;
-import java.util.*;
+import java.util.Arrays;
 
 public class ParagraphParser extends Parser {
     private static final String SENTENCE_SEPARATOR = "(?<=\\?)|(?<=!)|(?<=(\\.{3}))|(?<=\\.)";

@@ -3,10 +3,10 @@ package com.epam.infohandling.logics.sorter.comparator;
 import com.epam.infohandling.entity.Lexeme;
 import java.util.Comparator;
 
-public class CharacterOccurrencesComparator implements Comparator<Lexeme> {
+public class DescendingCharacterOccurrencesComparator implements Comparator<Lexeme> {
     private char character;
 
-    public CharacterOccurrencesComparator(char character){
+    public DescendingCharacterOccurrencesComparator(char character){
         this.character = character;
     }
 
@@ -16,6 +16,12 @@ public class CharacterOccurrencesComparator implements Comparator<Lexeme> {
         String secondLexemeValue = secondLexeme.getValue();
         long firstOccurrencesAmount = firstLexemeValue.chars().filter(c -> c == character).count();
         long secondOccurrencesAmount = secondLexemeValue.chars().filter(c -> c == character).count();
-        return Long.compare(firstOccurrencesAmount,secondOccurrencesAmount);
+        if(firstOccurrencesAmount<secondOccurrencesAmount){
+            return 1;
+        }else if(firstOccurrencesAmount>secondOccurrencesAmount){
+            return -1;
+        }else{
+            return 0;
+        }
     }
 }
