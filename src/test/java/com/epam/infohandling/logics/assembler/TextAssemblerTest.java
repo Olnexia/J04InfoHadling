@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.util.Arrays;
 
-
 public class TextAssemblerTest {
     private static final Lexeme FIRST_TEST_WORD = Lexeme.word("\tHi");
     private static final Lexeme SECOND_TEST_WORD = Lexeme.word("there!");
@@ -25,7 +24,7 @@ public class TextAssemblerTest {
         //given
         TextAssembler textAssembler = new TextAssembler();
         //when
-        String actualText = textAssembler.assemble(TEST_COMPOSITE,false);
+        String actualText = textAssembler.assemble(TEST_COMPOSITE);
         //then
         Assert.assertEquals(EXPECTED_TEXT,actualText);
     }

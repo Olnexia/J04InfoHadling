@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PolishNotationCalculator {
+public class PolishNotationCalculator implements ExpressionCalculator {
 
-    public int calculateExpression(String expression){
+    @Override
+    public int calculate(String expression){
         Context context = new Context();
         List<AbstractMathExpression> abstractExpressions = parseExpression(expression);
         for (AbstractMathExpression terminal : abstractExpressions) {

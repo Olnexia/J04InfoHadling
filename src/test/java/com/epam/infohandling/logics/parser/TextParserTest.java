@@ -6,9 +6,7 @@ import com.epam.infohandling.entity.Lexeme;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.stubbing.Answer;
-
 import java.util.List;
-
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

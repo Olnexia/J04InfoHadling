@@ -1,6 +1,6 @@
 package com.epam.infohandling.logics.parser;
 
-public class ChainBuilder {
+public class ParserChainBuilder {
 
     public Parser buildChain(){
         SentenceParser sentenceParser = new SentenceParser();

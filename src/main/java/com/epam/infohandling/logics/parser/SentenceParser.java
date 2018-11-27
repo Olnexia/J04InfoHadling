@@ -1,8 +1,10 @@
 package com.epam.infohandling.logics.parser;
 
 import com.epam.infohandling.entity.Composite;
+import com.epam.infohandling.entity.Component;
 import com.epam.infohandling.entity.Lexeme;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,11 +18,11 @@ public class SentenceParser extends Parser {
     }
 
     @Override
-    public Composite parse(String sentence) {
-        Queue <String> expressions = findExpressions(sentence);
+    public Component parse(String sentence) {
+        Queue<String> expressions = findExpressions(sentence);
         String sentenceWithPlaceHolders = sentence.replaceAll(POLISH_NOTATION_REGEX, EXPRESSION_PLACEHOLDER);
         String[] words = sentenceWithPlaceHolders.split(WORDS_SEPARATOR);
-        Composite sentenceComposite = new Composite();
+        Component sentenceComposite = new Composite();
         for (String word : words) {
             Lexeme lexeme;
             if (word.compareTo(EXPRESSION_PLACEHOLDER) == 0) {
@@ -35,7 +37,7 @@ public class SentenceParser extends Parser {
     }
 
     private Queue<String> findExpressions (String sentence){
-        Queue<String> expressions = new LinkedList <>();
+        Queue<String> expressions = new LinkedList<>();
         Matcher matcher = PRN_PATTERN.matcher(sentence);
         while(matcher.find()){
             String expression = matcher.group();

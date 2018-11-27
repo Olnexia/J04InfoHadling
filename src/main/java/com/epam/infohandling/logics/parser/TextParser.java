@@ -1,6 +1,7 @@
 package com.epam.infohandling.logics.parser;
 
 import com.epam.infohandling.entity.Composite;
+import com.epam.infohandling.entity.Component;
 import java.util.Arrays;
 
 public class TextParser extends Parser {
@@ -11,10 +12,10 @@ public class TextParser extends Parser {
     }
 
     @Override
-    public Composite parse(String text) {
-        String[] content = text.trim().split(PARAGRAPH_SEPARATOR);
-        Composite textComposite = new Composite();
-        Arrays.stream(content).forEach(p->textComposite.addComponent(getSuccessor().parse(p)));
+    public Component parse(String text) {
+        String[] paragraphs = text.trim().split(PARAGRAPH_SEPARATOR);
+        Component textComposite = new Composite();
+        Arrays.stream(paragraphs).forEach(p->textComposite.addComponent(getSuccessor().parse(p)));
         return textComposite;
     }
 }

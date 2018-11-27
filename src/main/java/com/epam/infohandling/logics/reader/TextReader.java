@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class TextReader {
-    private static String EOF_DELIMITER = "\\Z";
+    private static final String EOF_DELIMITER = "\\Z";
 
     public String readText(String filePath) throws TextReadingException{
         try(Scanner scanner = new Scanner(new File(filePath))) {

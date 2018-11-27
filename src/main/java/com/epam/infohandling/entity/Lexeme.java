@@ -31,6 +31,10 @@ public class Lexeme implements Component, Value {
         return value;
     }
 
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     public boolean isExpression() {
         return expression;
     }
